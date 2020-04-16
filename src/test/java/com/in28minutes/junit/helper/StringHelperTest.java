@@ -1,5 +1,7 @@
 package com.in28minutes.junit.helper;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -9,7 +11,22 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class StringHelperTest {
     // Given
-    StringHelper helper = new StringHelper();
+    StringHelper helper;
+
+    @BeforeEach
+    void beforeEach()
+    {
+        helper = new StringHelper();
+        System.out.println("\nCreate helper object");
+
+    }
+
+    @AfterEach
+    void afterEach()
+    {
+        helper = null;
+        System.out.println("Terminate helper object");
+    }
 
     // AACD => CD ACD => CD CDEF => CDEF CDAA =>CDAA
     @Test
