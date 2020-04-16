@@ -54,9 +54,9 @@ public class ArrayCompareTest {
     }
 
     //    @Test
-    @RepeatedTest(10)
+    @RepeatedTest(3)
     void testArraySort_Performance5() {
-        assertTimeout(Duration.ofMillis(30),
+        assertTimeout(Duration.ofMillis(50),
                 () -> {
                     int[] array = {12, 1, 5, 2, 7};
                     for (int i = 0; i <= 1000000; i++) {
